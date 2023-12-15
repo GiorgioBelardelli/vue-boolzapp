@@ -104,6 +104,12 @@
     gap: .5rem;
 }
 
+.contacts-list{
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
 .fa-bell-slash{
     color: #8edafc;
     font-size: 1.3rem;
@@ -163,4 +169,46 @@
 
 .center{
     text-align: center;
+}
+
+
+/* STILI CONTATTO SIDEBAR */
+
+.contact{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .8rem 1rem;
+    gap: 1.5rem;
+    border-bottom: 1px solid #f5f5f5;
+    cursor: pointer;
+}
+
+.contact:hover{
+    background-color: #f5f5f5;
+}
+
+.active{
+    background-color: #e9ebeb;
+}
+
+.contact span{
+    color: #c1b9c7;
+    font-size: .8rem;
+}
+
+.contact img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.contact-info{
+    flex-grow: 1;
+    align-self: flex-start;
+}
+
+.last-message-time{
+    align-self: flex-start;
 }
