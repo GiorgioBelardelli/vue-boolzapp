@@ -17,17 +17,17 @@ createApp({
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Hai portato a spasso il cane?',
+                            message: 'Fiona stasera non ce, birretta e Ciao Darwin?',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Ricordati di stendere i panni',
+                            message: 'Dai non fa la pussy',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 16:15:22',
-                            message: 'Tutto fatto!',
+                            message: 'Ho pisciato la draghessa, alle 20:00 sono da te!',
                             status: 'received'
                         }
                     ],
@@ -39,17 +39,17 @@ createApp({
                     messages: [
                         {
                             date: '20/03/2020 16:30:00',
-                            message: 'Ciao come stai?',
+                            message: 'Ricorda di salutarmi la regina quando arrivi!',
                             status: 'sent'
                         },
                         {
                             date: '20/03/2020 16:30:55',
-                            message: 'Bene grazie! Stasera ci vediamo?',
+                            message: 'Va bene Shrek',
                             status: 'received'
                         },
                         {
                             date: '20/03/2020 16:35:00',
-                            message: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                            message: 'Grazie, stasera arriva Ciuchino e mettiamo su un documentario',
                             status: 'sent'
                         }
                     ],
@@ -61,17 +61,17 @@ createApp({
                     messages: [
                         {
                             date: '28/03/2020 10:10:40',
-                            message: 'La Marianna va in campagna',
+                            message: 'Capisco ch siamo partiti con il piede sbagliato ma vorrei venire a vedere Ciao Darwin con voi!',
                             status: 'received'
                         },
                         {
                             date: '28/03/2020 10:20:10',
-                            message: 'Sicuro di non aver sbagliato chat?',
+                            message: 'Non ti sentiresti a tuo agio nella mia palude',
                             status: 'sent'
                         },
                         {
                             date: '28/03/2020 16:15:22',
-                            message: 'Ah scusa!',
+                            message: 'Faró il buono, lo prometto!',
                             status: 'received'
                         }
                     ],
@@ -83,12 +83,12 @@ createApp({
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Lo sai che ha aperto una nuova pizzeria?',
+                            message: 'Gatto ore 20:00 da me che si vede Ciao Darwin!',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Si, ma preferirei andare al cinema',
+                            message: 'DAJEEEEEEEEEEEEEEEEE',
                             status: 'received'
                         }
                     ],
@@ -100,12 +100,12 @@ createApp({
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Ricordati di chiamare la nonna',
+                            message: "ore 20:00. Palude. Ciao Darwin. Chiama anche l'uomo focaccina",
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Va bene, stasera la sento',
+                            message: 'Ci stiamo.',
                             status: 'received'
                         }
                     ],
@@ -117,17 +117,17 @@ createApp({
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Ciao Claudia, hai novità?',
+                            message: 'Fra che sfigato tuo padre',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Non ancora',
+                            message: 'Ma tu madre',
                             status: 'received'
                         },
                         {
                             date: '10/01/2020 15:51:00',
-                            message: 'Nessuna nuova, buona nuova',
+                            message: 'Vabbé se vuoi ore 20:00 Ciao Darwin da me',
                             status: 'sent'
                         }
                     ],
@@ -139,12 +139,12 @@ createApp({
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Fai gli auguri a Martina che è il suo compleanno!',
+                            message: 'A Scemoooo',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Grazie per avermelo ricordato, le scrivo subito!',
+                            message: '🐸💀',
                             status: 'received'
                         }
                     ],
@@ -156,17 +156,17 @@ createApp({
                     messages: [
                         {
                             date: '10/01/2020 15:30:55',
-                            message: 'Ciao, andiamo a mangiare la pizza stasera?',
+                            message: 'Bello de casa a che punto sta Fiona? in quella carrozza a cipolla demmerda non prende un cazzo',
                             status: 'received'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
+                            message: 'Buongiorno regina, sua figlia é partita!',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:51:00',
-                            message: 'OK!!',
+                            message: 'Ennamoo',
                             status: 'received'
                         }
                     ],
@@ -204,15 +204,8 @@ createApp({
             this.userSearch = this.userSearch.toLowerCase();
 
             this.contacts.forEach(contact =>{
-
-                if(!contact.name.includes(this.userSearch)){
-                contact.visible = !contact.visible
-                console.log(this.userSearch);
-            }
+            contact.visible = contact.name.includes(this.userSearch);
             })
-            
-            
-    
         }
         
     }
