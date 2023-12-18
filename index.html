@@ -42,10 +42,10 @@
                             </div>
                             <div class="search-input-container">
                                 <button id="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                <input type="text" id="search-input" placeholder="Cerca o inizia una nuova chat">
+                                <input type="text" id="search-input" placeholder="Cerca o inizia una nuova chat" v-model="userSearch">
                             </div>
                             <div class="contacts-list">
-                                <div v-for="(contact, i) in contacts" :key="i" class="contact">
+                                <div v-for="(contact, i) in contacts" :key="i" class="contact" @click="changeChat(i)">
                                     <div class="contact-img">
                                         <img :src="contact.avatar" alt="contact-img">
                                     </div>
@@ -64,10 +64,10 @@
 
                                 <div class="selected-contact">
                                     <div class="contact-img">
-                                        <img src="img/ciuchino.jpg" alt="selected-contact-img">
+                                        <img :src=avatar alt="selected-contact-img">
                                     </div>
                                     <div class="contact-info">
-                                        <h4>Ciuchino</h4>
+                                        <h4>{{ nome }}</h4>
                                         <span>Ultimo accesso 12:00</span>
                                     </div>
                                 </div>
@@ -81,15 +81,9 @@
 
                             <div class="conversation-panel">
                                 <div class="row">
-                                    <div class="user-message">
-                                        <p>Oggi Fiona non c'&egrave;, birretta e ciao Darwin?</p>
-                                        <span class="time">12:00</span>
-                                    </div> 
-                                </div>
-                                <div class="row">
-                                    <div class="contact-message">
-                                        <p>Sono gi&agrave; qua!</p>
-                                        <span class="time">12:00</span>
+                                    <div v-for="(conversation, i) in chat" :key="i" :class="conversation.status === 'sent' ? 'user-message' : 'contact-message'">
+                                        <p>{{ conversation.message }}</p>
+                                        <span class="time">{{ conversation.date }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +94,7 @@
                                     <a href="#"><i class="fa-regular fa-face-smile"></i></a>
                                 </div>
                                 <div class="chat-container">
-                                <input type="text" id="chat-input" placeholder="Scrivi un messaggio">
+                                <input type="text" id="chat-input" placeholder="Scrivi un messaggio" @keyup.enter="addMessage()" v-model="userMessage">
                                 </div>
                                 <div class="icons-container center">
                                     <a href="#"><i class="fa-solid fa-microphone"></i></a>

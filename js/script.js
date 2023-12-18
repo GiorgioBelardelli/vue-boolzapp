@@ -3,6 +3,12 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
+            userMessage: "",
+            nome: "",
+            avatar:"",
+            currentChat: 0,
+            chat: [],
+            userSearch: "",
             contacts: [
                 {
                     name: 'Ciuchino',
@@ -164,12 +170,40 @@ createApp({
                             status: 'received'
                         }
                     ],
+                    
                 }
             ]
         }
     },
     methods:{
+        changeChat(i){  
+            this.nome = this.contacts[i].name;
+            this.avatar = this.contacts[i].avatar;
+            this.chat = this.contacts[i].messages;
+            this.currentChat = i;
+        },
+        addMessage(){
+            const newMessage = {
+                date: "10/10/10 12:00",
+                message: this.userMessage,
+                status: "sent"
+            }
+            this.contacts[this.currentChat].messages.push(newMessage);
+            this.userMessage = "";
 
+            setTimeout(() =>{
+                const answer = {
+                    date: "",
+                    message: "daje",
+                    status: "received"
+                }
+                this.contacts[this.currentChat].messages.push(answer);
+            }, 1000);
+        },
+        filterContacts(){
+            
+        }
+        
     }
 }).mount("#app")
 
