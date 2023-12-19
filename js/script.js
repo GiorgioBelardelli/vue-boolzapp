@@ -204,7 +204,7 @@ createApp({
             this.userSearch = this.userSearch.toLowerCase();
 
             this.contacts.forEach(contact =>{
-            contact.visible = contact.name.includes(this.userSearch);
+            contact.visible = contact.name.toLowerCase().includes(this.userSearch);
             })
         }
         
